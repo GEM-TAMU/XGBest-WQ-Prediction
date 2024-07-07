@@ -1,0 +1,38 @@
+library(here)
+library(lubridate)
+library(randomForest)
+library(caret)
+library(e1071)
+library(hydroGOF)
+library(hydroTSM)
+library(caret)
+library(dataRetrieval)
+library(stringr)
+library(tools)
+library(survival)
+library(EGRET)
+library(tidyverse)
+library(foreach)
+library(doParallel)
+library(xgboost)
+library(tidytext)
+library(SHAPforxgboost)
+library(gg.layers)
+library(ggplot2)
+library(gridExtra)
+library(patchwork)
+library(scales)
+#Dont load library for rloadest, 
+#smwrQW package that is required in the rloadest package masks the view in ,1
+#loadest and makes everything go haywire.
+#use loadest functions directly
+
+#install.packages("remotes")
+#remotes::install_github("USGS-R/smwrData")
+#remotes::install_github("USGS-R/smwrBase")
+#remotes::install_github("USGS-R/smwrGraphs")
+#remotes::install_github("USGS-R/smwrStats")
+#remotes::install_github("USGS-R/smwrQW")
+#remotes::install_github("USGS-R/rloadest")
+
+#remotes::install_github('rpkgs/gg.layers')
