@@ -23,7 +23,7 @@ xgb_cv <- function(sample_data) {
     best_test_rmse = Inf
     best_test_rmse_index = 0
     
-    for (iter in 1:20) {
+    for (iter in 1:50) {
       param <- list(objective = "reg:squarederror",
                     max_depth = sample(5:20, 1),
                     eta = runif(1, .01, .3),
@@ -70,7 +70,7 @@ xgb_cv <- function(sample_data) {
   return(output)
 }
 
-numCores <- 2
+numCores <- 10
 cl <- makeCluster(numCores)
 registerDoParallel(cl)
 ML_cv_output <- foreach(i = 1:length(combined_data_splits), .packages = c("tidyverse","xgboost","foreach","parallel","doParallel")) %dopar% {

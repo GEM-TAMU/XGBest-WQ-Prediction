@@ -1,8 +1,5 @@
 library(here)
 library(lubridate)
-library(randomForest)
-library(caret)
-library(e1071)
 library(hydroGOF)
 library(hydroTSM)
 library(caret)
@@ -22,17 +19,22 @@ library(ggplot2)
 library(gridExtra)
 library(patchwork)
 library(scales)
-#Dont load library for rloadest, 
-#smwrQW package that is required in the rloadest package masks the view in ,1
-#loadest and makes everything go haywire.
-#use loadest functions directly
+library(purrr)
+library(future)
+library(furrr)
+
+#Don't load library for rloadest, 
+#smwrQW package that is required in the rloadest package makes everything go haywire.
+#Use loadest functions directly
 
 #install.packages("remotes")
 #remotes::install_github("USGS-R/smwrData")
 #remotes::install_github("USGS-R/smwrBase")
 #remotes::install_github("USGS-R/smwrGraphs")
-#remotes::install_github("USGS-R/smwrStats")
-#remotes::install_github("USGS-R/smwrQW")
+#remotes::install_gitlab("water/analysis-tools/smwrStats",
+#                        host = "code.usgs.gov")
+#remotes::install_gitlab("water/analysis-tools/smwrQW",
+#                        host = "code.usgs.gov")
 #remotes::install_github("USGS-R/rloadest")
 
 #remotes::install_github('rpkgs/gg.layers')

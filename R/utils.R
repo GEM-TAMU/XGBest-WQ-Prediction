@@ -20,7 +20,7 @@ rm_outliers <- function(Sample,columns = c("logQ","ConcAve","Tot_L")){
   variables_for_mahalanobis <- Sample[, columns]
   mean_cov <- cov(variables_for_mahalanobis)
   mahalanobis_dist <- mahalanobis(variables_for_mahalanobis, center = colMeans(variables_for_mahalanobis), cov = mean_cov)
-  threshold <- quantile(mahalanobis_dist, 0.99)
+  threshold <- quantile(mahalanobis_dist, 0.999)
   return(Sample[-which(mahalanobis_dist > threshold),])
 }
 
@@ -63,8 +63,6 @@ check_accuracy <- function(data){
       results <- data.frame(StationID = as.character(station),Par = as.character(par), 
                             train_NSE = NSE(sim = df_train$yHat, obs = df_train$ConcAve),
                             test_NSE = NSE(sim = df_test$yHat, obs = df_test$ConcAve),
-                            train_NSE_log = NSE(sim = log(df_train$yHat), obs = log(df_train$ConcAve)),
-                            test_NSE_log = NSE(sim = log(df_test$yHat), obs = log(df_test$ConcAve)),
                             train_pbias = pbias(sim = df_train$yHat, obs = df_train$ConcAve),
                             test_pbias = pbias(sim = df_test$yHat, obs = df_test$ConcAve),
                             train_KGE = KGE(sim = df_train$yHat, obs = df_train$ConcAve),
@@ -72,7 +70,9 @@ check_accuracy <- function(data){
                             train_r2 = r2(sim = df_train$yHat, obs = df_train$ConcAve),
                             test_r2 = r2(sim = df_test$yHat, obs = df_test$ConcAve),
                             train_mae = mae(sim = df_train$yHat, obs = df_train$ConcAve),
-                            test_mae = mae(sim = df_test$yHat, obs = df_test$ConcAve))
+                            test_mae = mae(sim = df_test$yHat, obs = df_test$ConcAve),
+                            train_rmse = rmse(sim = df_train$yHat, obs = df_train$ConcAve),
+                            test_rmse = rmse(sim = df_test$yHat, obs = df_test$ConcAve))
       output <- rbind(output,results)
     }
   }
@@ -85,11 +85,10 @@ summarize_accuracy <- function(data){
     group_by(Par)%>%
     summarize(Total = n(),
               test_NSE_gt_0.3 = sum(test_NSE > 0.3, na.rm = TRUE),
-              test_NSE_log_gt_0.3 = sum(test_NSE_log > 0.3, na.rm = TRUE),
-              test_KGE_gt_0.3 = sum(test_KGE > 0.5, na.rm = TRUE),
-              test_pbias_25 = sum(abs(test_pbias) <= 15, na.rm = TRUE),
-              test_r2_gt_0.3 = sum(test_r2 > 0.5, na.rm = TRUE),
-              combined_kge_pbias = sum(test_KGE > 0.3 & abs(test_pbias) <= 25, na.rm =TRUE))
+              test_KGE_gt_0.3 = sum(test_KGE > 0.3, na.rm = TRUE),
+              test_pbias_15 = sum(abs(test_pbias) < 15, na.rm = TRUE),
+              test_r2_gt_0.3 = sum(test_r2 > 0.3, na.rm = TRUE),
+              combined_kge_pbias = sum(test_KGE > 0.3 & abs(test_pbias) <= 15, na.rm =TRUE))
   return(output)
 }
 
@@ -99,18 +98,18 @@ write_egret_list <- function(Sample, Daily){
     dir.create("temp")
   }
   INFO  <- Sample[1,]%>%
-            select("StationID", "HUC12", "bfi","Tot_L","Par")
+    select("StationID", "HUC12", "bfi","Tot_L","Par")
   Sample_new <- Sample%>%
-                  mutate(remark = "")%>%
-                  select("date","remark","ConcAve")%>%
-                  mutate(date = as.character(format(date,"%m/%d/%Y")))
+    mutate(remark = "")%>%
+    select("date","remark","ConcAve")%>%
+    mutate(date = as.character(format(date,"%m/%d/%Y")))
   write.csv(Sample_new,paste0("./temp/sample_temp",INFO$StationID,".txt"),row.names = FALSE)
   Sample_new <- readUserSample(filePath = "./temp",fileName = paste0("sample_temp",INFO$StationID,".txt"))
   Sample_new <- Sample_new%>%
     left_join(Sample%>%select(date,fold), join_by("Date" == "date"))
   Daily <- Daily%>%
-            select("date","Q")%>%
-            mutate(date = as.character(format(date,"%m/%d/%Y")))
+    select("date","Q")%>%
+    mutate(date = as.character(format(date,"%m/%d/%Y")))
   write.csv(Daily,paste0("./temp/daily_temp",INFO$StationID,".txt"),row.names = FALSE)
   Daily <- readUserDaily(filePath = "./temp", fileName = paste0("daily_temp",INFO$StationID,".txt"))
   eList <- mergeReport(INFO,Daily,Sample_new)
