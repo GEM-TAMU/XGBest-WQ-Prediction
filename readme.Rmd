@@ -9,7 +9,7 @@ output: github_document
 paste0("Time of last build: ", Sys.time())
 ```
 
-**This project contains the R code for:** Jain, Shubham; Bawa, Arun; Mendoza, Katie; Srinivasan, Raghavan; Parmar, Rajbir; Smith, Deron; Wolfe, Kurt; Johnston, John M., 2024, Prediction and Inference of Daily Instream Nutrient and Sediment Concentrations in the Eastern United States using Extreme Gradient Boosting ***Manuscript Under Review***.
+**This project contains the R code for:** Jain, Shubham; Bawa, Arun; Mendoza, Katie; Srinivasan, Raghavan; Parmar, Rajbir; Smith, Deron; Wolfe, Kurt; Johnston, John M., 2024, Prediction and Inference of Daily Instream Nutrient and Sediment Concentrations in the Eastern United States using Extreme Gradient Boosting. ***Manuscript Under Review***.
 
 ## Required data
 Data required to reproduce the results is available at: https://doi.org/10.18738/T8/FWJVKW  

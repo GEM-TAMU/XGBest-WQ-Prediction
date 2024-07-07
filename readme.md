@@ -4,13 +4,13 @@ Boosting
 ================
 Shubham Jain
 
-    ## [1] "Time of last build: 2024-07-07 09:11:05.567599"
+    ## [1] "Time of last build: 2024-07-07 09:12:58.241179"
 
 **This project contains the R code for:** Jain, Shubham; Bawa, Arun;
 Mendoza, Katie; Srinivasan, Raghavan; Parmar, Rajbir; Smith, Deron;
 Wolfe, Kurt; Johnston, John M., 2024, Prediction and Inference of Daily
 Instream Nutrient and Sediment Concentrations in the Eastern United
-States using Extreme Gradient Boosting ***Manuscript Under Review***.
+States using Extreme Gradient Boosting. ***Manuscript Under Review***.
 
 ## Required data
 
