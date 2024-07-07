@@ -1,5 +1,5 @@
 ---
-title: "Prediction and Inference of Daily Instream Nutrient and Sediment Concentrations in the Eastern United States using Extreme Gradient Boosting"
+title: "Replication code for: Prediction and Inference of Daily Instream Nutrient and Sediment Concentrations in the Eastern United States using Extreme Gradient Boosting"
 author: "Shubham Jain"
 #date: "`r format(Sys.Date(), '%B %d, %Y')`"
 output: github_document

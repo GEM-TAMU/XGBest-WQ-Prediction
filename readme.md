@@ -1,10 +1,10 @@
-Prediction and Inference of Daily Instream Nutrient and Sediment
-Concentrations in the Eastern United States using Extreme Gradient
-Boosting
+Replication code for: Prediction and Inference of Daily Instream
+Nutrient and Sediment Concentrations in the Eastern United States using
+Extreme Gradient Boosting
 ================
 Shubham Jain
 
-    ## [1] "Time of last build: 2024-07-07 09:12:58.241179"
+    ## [1] "Time of last build: 2024-07-07 09:14:27.319402"
 
 **This project contains the R code for:** Jain, Shubham; Bawa, Arun;
 Mendoza, Katie; Srinivasan, Raghavan; Parmar, Rajbir; Smith, Deron;
