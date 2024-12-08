@@ -10,8 +10,7 @@ Wolfe, Kurt; Johnston, John M., 2024, Enhancing Prediction and Inference of Dail
 
 ## Required data
 
-Data required to reproduce the results is available at:
-[https://doi.org/10.18738/T8/FWJVKW](https://doi.org/10.18738/T8/8X7QMA)
+Data required to reproduce the results is available at: <https://doi.org/10.18738/T8/8X7QMA>
 
 ## Replication files Descriptions
 
