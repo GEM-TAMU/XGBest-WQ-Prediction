@@ -1,6 +1,4 @@
-Replication Code for: Prediction and Inference of Daily Instream
-Nutrient and Sediment Concentrations in the Eastern United States using
-Extreme Gradient Boosting
+Replication Code for: Enhancing Prediction and Inference of Daily In-stream Nutrient and Sediment Concentrations using an Extreme Gradient Boosting based Water Quality Estimation Tool - XGBest
 ================
 Shubham Jain
 
@@ -8,14 +6,12 @@ Shubham Jain
 
 **This project contains the R code for:** Jain, Shubham; Bawa, Arun;
 Mendoza, Katie; Srinivasan, Raghavan; Parmar, Rajbir; Smith, Deron;
-Wolfe, Kurt; Johnston, John M., 2024, Prediction and Inference of Daily
-Instream Nutrient and Sediment Concentrations in the Eastern United
-States using Extreme Gradient Boosting. ***Manuscript Under Review***.
+Wolfe, Kurt; Johnston, John M., 2024, Enhancing Prediction and Inference of Daily In-stream Nutrient and Sediment Concentrations using an Extreme Gradient Boosting based Water Quality Estimation Tool - XGBest. ***Manuscript Under Review***.
 
 ## Required data
 
 Data required to reproduce the results is available at:
-<https://doi.org/10.18738/T8/FWJVKW>
+<[https://doi.org/10.18738/T8/FWJVKW](https://doi.org/10.18738/T8/8X7QMA)>
 
 ## Replication files Descriptions
 
