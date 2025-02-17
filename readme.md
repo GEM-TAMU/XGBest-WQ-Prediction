@@ -4,9 +4,7 @@ Shubham Jain
 
     ## [1] "Time of last build: 2024-07-07 09:15:24.713642"
 
-**This project contains the R code for:** Jain, Shubham; Bawa, Arun;
-Mendoza, Katie; Srinivasan, Raghavan; Parmar, Rajbir; Smith, Deron;
-Wolfe, Kurt; Johnston, John M., 2024, Enhancing Prediction and Inference of Daily In-stream Nutrient and Sediment Concentrations using an Extreme Gradient Boosting based Water Quality Estimation Tool - XGBest. ***Manuscript Under Review***.
+**This project contains the R code for:** Jain, S., Bawa, A., Mendoza, K., Srinivasan, R., Parmar, R., Smith, D., Wolfe, K. and Johnston, J.M., 2025. Enhancing prediction and inference of daily in-stream nutrient and sediment concentrations using an extreme gradient boosting based water quality estimation tool-XGBest. Science of the Total Environment, 963, p.178517.
 
 ## Required data
 
